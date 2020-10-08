@@ -45,3 +45,9 @@ margin-top: -25px;
 color:#BDBDBD;
 
 }
+#image-container.highlight {
+    border-color: purple;
+  }
+  .holder{
+      display: none;
+  }
