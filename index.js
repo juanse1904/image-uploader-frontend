@@ -16,9 +16,10 @@ function handleDrop(e) {
 function CallMe()
 {
   const fileSelector = document.getElementById('file-selector');
+  console.log('el fileselector se activo')
   fileSelector.addEventListener('change', (event) => {
-    const fileList = event.target.files;
-    console.log(fileList);
+    const file = event.target.files;
+    handleFiles(file)
   });
 }
 function handleFiles(files) {

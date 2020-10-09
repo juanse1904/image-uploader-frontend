@@ -17,8 +17,9 @@
             <p class="container-text">Drag & Drop your image here</p>
         </div>
         <p class="altern">Or</p>
-        <button class='button'onClick="CallMe()">Choose a file</button>
-        <input type="file" class='holder' id="file-selector" multiple>
+       <label class='button-input' for="file-selector" onClick="CallMe()"> <!-- for debe tener el id del elemento que va a 'escuchar' -->
+        Choose a file.. <input type="file" class='holder' id="file-selector" multiple>
+        </label>
     </div>
 </body>
 <script src="index.js"></script>
