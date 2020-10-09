@@ -9,7 +9,7 @@
 </head>
 <link rel='stylesheet' href='style.css'></link>
 <body>
-    <div class="first-rectangle">
+    <div class="first-rectangle" id="initialDashboard">
         <p class="title">Upload your image</p>
         <p class="subtitle">File should be Jpeg, Png...</p>
         <div id='drop-container' class="image-container" >
@@ -20,6 +20,16 @@
        <label class='button-input' for="file-selector" onClick="CallMe()"> <!-- for debe tener el id del elemento que va a 'escuchar' -->
         Choose a file.. <input type="file" class='holder' id="file-selector" multiple>
         </label>
+    </div>
+    <div class="first-rectangle hide" id="finalDashboard" name="finalscreen">
+        <img src="./assets/static/check-good.png" class="check-img" alt="">
+        <p class="title">Uploaded Successfully</p>
+        <img class='logo' class="image-uploaded" src="" id="image-uploaded" alt="">
+        <input type="text" name="url" id="url">
+    </div>
+    <div class="loading-rectangle" id="loading">
+        <p class="subtitle">Loading...</p>
+        <progress id="progress-bar" max=100 value=0></progress>
     </div>
 </body>
 <script src="index.js"></script>

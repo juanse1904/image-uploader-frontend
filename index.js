@@ -1,5 +1,7 @@
 console.log('holiii');
 let dropArea = document.getElementById('drop-container');
+let initialDashboard = document.getElementById('initialDashboard');
+let loading = document.getElementById('loading');
 console.log(dropArea);
   ['dragenter', 'dragover', 'dragleave', 'drop'].forEach((eventName) => dropArea.addEventListener(eventName, preventDefaults, false))
   ;['dragenter', 'dragover'].forEach((eventName) => dropArea.addEventListener(eventName, highlight, false))
@@ -15,7 +17,7 @@ function handleDrop(e) {
 }
 function CallMe()
 {
-  const fileSelector = document.getElementById('file-selector');
+  
   console.log('el fileselector se activo')
   fileSelector.addEventListener('change', (event) => {
     const file = event.target.files;
@@ -24,6 +26,8 @@ function CallMe()
 }
 function handleFiles(files) {
   ([...files]).forEach(uploadFile)
+  removeDashboard();
+  showLoading()
 }
   function highlight(e) {
     dropArea.classList.add('highlight')
@@ -32,6 +36,21 @@ function handleFiles(files) {
   function unhighlight(e) {
     dropArea.classList.remove('highlight')
   }
+  function removeDashboard(e) {
+    initialDashboard.classList.add('hide')
+  }
+  function lastScreen(data) {
+    initialDashboard.classList.add('hide')
+    loading.classList.remove('visible')
+    document.getElementById('finalDashboard').classList.remove('hide')
+    document.getElementById('image-uploaded').src=data.url
+    document.url.value=data.finalscreen.url
+  }
+  function showLoading(e) {
+    setTimeout(()=> document.getElementById("progress-bar").value = 60,200)
+    loading.classList.add('visible')
+  }
+
   function preventDefaults (e) {
     e.preventDefault()
     e.stopPropagation()
@@ -49,6 +68,7 @@ function handleFiles(files) {
     formData.append("image", file, "fff.png");
   
     fetch(url, requestOptions)
-    .then(() => { console.log('uploaded')})
+    .then(response => response.json())
+    .then((data) => { lastScreen(data)})
     .catch(() => { console.log('there was an issue') })
   }
