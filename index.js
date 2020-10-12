@@ -44,7 +44,7 @@ function handleFiles(files) {
     loading.classList.remove('visible')
     document.getElementById('finalDashboard').classList.remove('hide')
     document.getElementById('image-uploaded').src=data.url
-    document.url.value=data.finalscreen.url
+    document.getElementById('url-box').value=data.url
   }
   function showLoading(e) {
     setTimeout(()=> document.getElementById("progress-bar").value = 60,200)
