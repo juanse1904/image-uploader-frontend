@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image-uploader</title>
+</head>
+<link rel='stylesheet' href='style.css'></link>
+<body>
+    <div class="first-rectangle" id="initialDashboard">
+        <p class="title">Upload your image</p>
+        <p class="subtitle">File should be Jpeg, Png...</p>
+        <div id='drop-container' class="image-container" >
+            <img class='logo' src="./assets/static/image-logo.png" alt="">
+            <p class="container-text">Drag & Drop your image here</p>
+        </div>
+        <p class="altern">Or</p>
+       <label class='button-input' for="file-selector" onClick="CallMe()"> <!-- for debe tener el id del elemento que va a 'escuchar' -->
+        Choose a file.. <input type="file" class='holder' id="file-selector" multiple>
+        </label>
+    </div>
+    <div class="first-rectangle hide" id="finalDashboard" name="finalscreen">
+        <img src="./assets/static/check-good.png" class="check-img" alt="">
+        <p class="title">Uploaded Successfully</p>
+        <img class="image-uploaded" src="" id="image-uploaded" alt="">
+        <div class="link-container">
+            <input type="text" name="url" id="url-box" >
+            <button class="button-input" onclick="copyLink()">Copy Link</button>
+        </div>
+    </div>
+    <div class="loading-rectangle" id="loading">
+        <p class="subtitle">Loading...</p>
+        <progress id="progress-bar" max=100 value=0></progress>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
