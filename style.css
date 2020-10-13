@@ -11,6 +11,7 @@ font-family: 'Poppins', sans-serif;
 display: flex;
 flex-direction: column;
 align-items: center;
+padding-bottom: 25px;;
 }
 .image-container{
     background: #F6F8FB;
@@ -54,6 +55,7 @@ color:#BDBDBD;
   .button-input{
     width: 101px;
     height: 31.98px;
+  line-height: 31.98px;
     left: 670.64px;
     top: 705.39px;
     background: #2F80ED;
