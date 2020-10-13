@@ -55,6 +55,12 @@ function handleFiles(files) {
     e.preventDefault()
     e.stopPropagation()
   }
+  function copyLink(){
+    let boxLink=document.getElementById('url-box')
+    boxLink.select()
+    document.execCommand("copy");
+    alert("holii, este es el link: " + boxLink.value);
+  }
   function uploadFile(file) {
     let url = 'https://image-uploader-be.herokuapp.com/images'
     let formData = new FormData()
