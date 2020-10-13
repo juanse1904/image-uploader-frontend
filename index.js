@@ -17,7 +17,7 @@ function handleDrop(e) {
 }
 function CallMe()
 {
-  
+  const fileSelector = document.getElementById("file-selector")
   console.log('el fileselector se activo')
   fileSelector.addEventListener('change', (event) => {
     const file = event.target.files;
