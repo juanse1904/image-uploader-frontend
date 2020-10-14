@@ -56,7 +56,7 @@ function copyLink(){
   let boxLink=document.getElementById('url-box')
   boxLink.select()
   document.execCommand("copy");
-  alert("holii, este es el link: " + boxLink.value);
+  alert("hello, this is your link and is now on the clipboard: " + boxLink.value);
 }
 function uploadFile(file) {
   let url = 'https://image-uploader-be.herokuapp.com/images'
